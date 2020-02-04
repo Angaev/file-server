@@ -27,11 +27,14 @@ const storageConfig = multer.diskStorage({
 app.use(multer({storage: storageConfig}).any());
 
 app.post('/upload', function (req, res, next) {
-   const fileData = req.files;
+   console.log('Try upload incoming data');
+    const fileData = req.files;
    if (!fileData) {
-     res.send('File upload failed!');
+        console.log('Failed');
+        res.send('File upload failed!');
    } else {
-     res.send('File upload success!');
+        console.log('success');
+        res.send('File upload success!');
    }
 });
 
